@@ -1,0 +1,167 @@
+html, body{
+  height: 100%;
+}
+
+body { 
+    background-image: url("../img/background.jpg") ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+}
+
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: rgba(0,36,10,0.6);
+}
+
+/* Float the list items side by side */
+ul.tab li {float: right;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: rgba(20,210,210,0.8);}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: rgba(19,136,153,0.6);}
+
+.tabContent {
+    font-family: Verdana;
+    font-size: 14px;
+    color: white;
+}
+
+/* Contact Icons */
+#centeredmenu {
+   overflow:hidden;
+}
+#centeredmenu ul {
+   clear:left;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   left:50%;
+   text-align:center;
+}
+#centeredmenu ul li {
+   display:block;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   right:50%;
+}
+#centeredmenu ul li a {
+   display:block;
+   margin:0 0 0 1px;
+   padding:3px 10px;
+   color:#000;
+   line-height:1.3em;
+}
+/* Transparent Modal */
+.modalbox .box {
+    background-color: rgba(0,0,0,0.7);
+    margin: 0 auto;
+    min-width: 210px;
+    padding: 40px;
+    width: 70%;
+    margin-top: 100px;
+}
+.modalbox .title {
+    border-bottom: 1px solid #ccc;
+    font-family: verdana;
+    font-size: 22px;
+    letter-spacing: 0.2em;
+    margin: 0;
+    padding: 0 0 10px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.modalbox .content {
+    display: block;
+    font-family: Verdana;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 10px 0 0;
+    color: #fff;
+}
+.modalbox .close {
+    color: #fff;
+    display: block;
+    float: right;
+    font-family: Verdana;
+    font-size: 22px;
+    height: 25px;
+    text-decoration: none;
+}
+.modalbox {
+    display: none;
+    position: relative;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color:#333333;
+}
+.modalbox:target {
+    display: block;
+    outline: none;
+}
+.link-modal {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 400px;
+    padding-left: 15px;
+}
+
+.link-modal a{
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.iconsize {
+    height: 75px;
+    width: 75px;
+}
+
+table {border: none;}
+
+.mobisyLink a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+.mobisyLink a:hover, a:active {
+    background-color: red;
+}
