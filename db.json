@@ -21,7 +21,7 @@
           "lineno": 1
         }
       ],
-      "level_id": 0,
+      "level_id": 1,
       "questions": [
         {
           "questiontype": "optional",
@@ -61,7 +61,7 @@
           "lineno": 0
         }
       ],
-      "level_id": 1,
+      "level_id": 2,
       "questions": [
         {
           "questiontype": "optional",
