@@ -66,22 +66,22 @@
         {
           "questiontype": "optional",
           "question": "How many different colors are in the text?",
-          "answerkeyword": 3,
+          "answerkeyword": "3",
           "answers": [
             {
-              "answer": 1,
+              "answer": "1",
               "is_correct": 0
             },
             {
-              "answer": 4,
+              "answer": "4",
               "is_correct": 0
             },
             {
-              "answer": 3,
+              "answer": "3",
               "is_correct": 1
             },
             {
-              "answer": 2,
+              "answer": "2",
               "is_correct": 0
             }
           ],
