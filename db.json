@@ -53,6 +53,47 @@
         }
       ]
     },
+
+    {
+      "story": "Let Us Count",
+      "images": [
+        {
+          "url": "http://i64.tinypic.com/t82b7t.jpg",
+          "lineno": 0
+        }
+      ],
+      "level_id": 2,
+      "questions": [
+        {
+          "questiontype": "optional",
+          "question": "5-2?",
+          "answerkeyword": "3",
+          "answers": [
+            {
+              "answer": "5",
+              "is_correct": 0
+            },
+            {
+              "answer": "4",
+              "is_correct": 0
+            },
+            {
+              "answer": "3",
+              "is_correct": 1
+            },
+            {
+              "answer": "2",
+              "is_correct": 0
+            }
+          ],
+          "images": [
+            {
+              "url": "http://i65.tinypic.com/91gm6d.png"
+            }
+          ]
+        }
+      ]
+    },
     {
       "story": "First, my top.\nMy top is white.\nSecond, my pants.\nMy pants are red.\nThird, my shoes.\nMy shoes are red and yellow.\nI put them on.\nFirst, second, third.\nI put them on myself.\nAll by myself.",
       "images": [
@@ -61,7 +102,7 @@
           "lineno": 0
         }
       ],
-      "level_id": 2,
+      "level_id": 3,
       "questions": [
         {
           "questiontype": "optional",
