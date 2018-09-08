@@ -6,153 +6,155 @@
       <meta name="description" content="Piyush Kumar About Me">
       <meta name="author" content="Piyush Kumar">
       <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+      <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
    </head>
    <body>
         <div id="tabDiv">
             <ul class="tab">
                 <li>
-                    <a href="https://drive.google.com/file/d/0BzCWDxNfV03KaGdjcXBoYUxPZzQ/view?usp=sharing" class="tablinks" target="_blank">
+                    <a id="resumeTab" href="https://drive.google.com/file/d/0BzCWDxNfV03KaGdjcXBoYUxPZzQ/view?usp=sharing" class="tablinks" target="_blank">
                         <p class="tabContent">Resume</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'contact')"><p class="tabContent">Contact</p></a>
+                    <a id="contactTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'contact')"><p class="tabContent">Contact</p></a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'work')"><p class="tabContent">Work</p></a>
+                    <a id="workTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'work')"><p class="tabContent">Work</p></a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'education')"><p class="tabContent">Education</p></a>
+                    <a id="educationTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'education')"><p class="tabContent">Education</p></a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'about')"><p class="tabContent">About Me</p></a>
+                    <a id="aboutTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'about')"><p class="tabContent">About Me</p></a>
                 </li>
             </ul>
         </div>
-       <div class="modalbox" id="education">
-        <div class="box">
-            <a class="close" href="javascript:closeTab(event,'education')">X</a>
-            <p class="title">Education</p>
-            <div class="content">
+        <div id="scrollableDiv" onscroll="scrollEvent()">
+          <!-- particles.js container -->
+          <div id="particles-js"></div>
+          <div class="modalbox" id="education">
+            <div class="box">
+              <p class="title">Education</p>
+              <div class="content">
                 <table cellspacing="20" cellpadding="0" style="font-family:Verdana;color:white;">
-                    <tr>
-                        <td><strong>Education</strong></td>
-                        <td><strong>The ICFAI University, Dehradun</strong></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>CGPA - 7.03 ( Completed 7 Semesters )</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>B. Tech, Computer Science Engineering (2012 - 2016 )</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><strong>Air Force School, Agra</strong></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Result - 72.2%</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>AISSCE, PCM (2009 - 11)</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><strong>Subhash Public School, Giridih</strong></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Result -  84.4</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>AISSE(2007 - 09)</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-       </div>
-        <div class="modalbox" id="work">
-          <div class="box">
-            <a class="close" href="javascript:closeTab(event, 'work')">X</a>
-            <p class="title">Work</p>
-            <div class="content">
-              <div>
-                <table cellspacing="20" cellpadding="0" style="font-family:Verdana;color:white;">
-                    <tr>
-                        <td><strong>Project</strong></td>
-                        <td><strong>Color Detection Desktop App using OpenCV</strong></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>- A simple App which uses the Laptop Camera to detect Red Color in the Image Captured.</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><strong>Tic Tac Toe Game using Javascript</strong></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>- A simple Tic Tac Toe Game, which blocks the users move on the basis of its winning sets.</td>
-                    </tr>
-                </table>
-                <hr>
-                <table cellspacing="20" cellpadding="0" style="font-family:Verdana;color:white;">
-                    <tr>
-                        <td><strong>Experience</strong></td>
-                        <td><strong>Mobisy Technologies Pvt. Ltd.</strong>(May 2015 - Present)</td>
-                    </tr>
+                  <tr>
+                    <td><strong>Education</strong></td>
+                    <td><strong>The ICFAI University, Dehradun</strong></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>CGPA - 7.03 ( Completed 7 Semesters )</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>B. Tech, Computer Science Engineering (2012 - 2016 )</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><strong>Air Force School, Agra</strong></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Result - 72.2%</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>AISSCE, PCM (2009 - 11)</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><strong>Subhash Public School, Giridih</strong></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Result -  84.4</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>AISSE(2007 - 09)</td>
+                  </tr>
                 </table>
               </div>
             </div>
           </div>
-        </div>
-        <div class="modalbox" id="about">
-          <div class="box">
-            <a class="close" href="javascript:closeTab(event, 'about')">X</a>
-            <p class="title">About Me</p>
-            <div class="content">
-                <img src="img/profile.jpg" alt="Profile Image" style="hieght:200px;width:140px;">
-                <p>My name is <strong>Piyush Kumar</strong> a.k.a crossdsection. Currently I'm working in <a target="_blank" href="https://in.linkedin.com/jobs/mobisy-technologies-pvt-ltd-jobs" class="mobisyLink">Mobisy</a> as a Software Developer.</p>
+          <div class="modalbox" id="work">
+            <div class="box">
+              <p class="title">Work</p>
+              <div class="content">
+                <div>
+                  <table cellspacing="20" cellpadding="0" style="font-family:Verdana;color:white;">
+                    <tr>
+                      <td><strong>Project</strong></td>
+                      <td><strong>Color Detection Desktop App using OpenCV</strong></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>- A simple App which uses the Laptop Camera to detect Red Color in the Image Captured.</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td><strong>Tic Tac Toe Game using Javascript</strong></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>- A simple Tic Tac Toe Game, which blocks the users move on the basis of its winning sets.</td>
+                    </tr>
+                  </table>
+                  <hr>
+                  <table cellspacing="20" cellpadding="0" style="font-family:Verdana;color:white;">
+                    <tr>
+                      <td><strong>Experience</strong></td>
+                      <td><strong>Mobisy Technologies Pvt. Ltd.</strong>(May 2015 - Present)</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modalbox" id="contact">
-          <div class="box">
-            <a class="close" href="javascript:closeTab(event, 'contact')">X</a>
-            <p class="title">Contact</p>
-            <div id="centeredmenu" class="content">
+          <div class="modalbox" id="about">
+            <div class="box">
+              <p class="title">About Me</p>
+              <div class="content">
+                <img src="img/profile.jpg" alt="Profile Image" style="hieght:200px;width:140px;">
+                <span class="element"></span>
+              </div>
+            </div>
+          </div>
+          <div class="modalbox" id="contact">
+            <div class="box">
+              <p class="title">Contact</p>
+              <div id="centeredmenu" class="content">
                 <p style="text-align:center"> When Life gives you questions, Google has Answers!!</p>
                 <br><br>
                 <ul>
-                    <li>
-                        <a href="https://github.com/crossdsection" target="_blank" title="GitHub">
-                            <img src="img/github.png" alt="Github" class="iconsize">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.linkedin.com/in/crossdsection/" target="_blank" title="LinkedIn">
-                            <img src="img/linkedin.png" alt="LinkedeIn" class="iconsize">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:piyush.midaas@gmail.com?subject=Hey%20Piyush!&body=Yo%20Piyush,%20" title="Google+">
-                            <img src="img/gmail.png" alt="Gmail" class="iconsize">
-                        </a>
-                    </li>
+                  <li>
+                    <a href="https://github.com/crossdsection" target="_blank" title="GitHub">
+                      <img src="img/github.png" alt="Github" class="iconsize">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.linkedin.com/in/crossdsection/" target="_blank" title="LinkedIn">
+                      <img src="img/linkedin.png" alt="LinkedeIn" class="iconsize">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:piyush.midaas@gmail.com?subject=Hey%20Piyush!&body=Yo%20Piyush,%20" title="Google+">
+                      <img src="img/gmail.png" alt="Gmail" class="iconsize">
+                    </a>
+                  </li>
                 </ul>
                 <br>
+              </div>
             </div>
           </div>
         </div>
