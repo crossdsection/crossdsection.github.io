@@ -1,6 +1,5 @@
 function showTab(evt, tabName) {
         // Declare all variables
-    console.log( 22 );
         var i, tabcontent, tablinks;
 
         // Get all elements with class="tabcontent" and hide them
@@ -17,9 +16,13 @@ function showTab(evt, tabName) {
 
         // Show the current tab, and add an "active" class to the link that opened the tab
         document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
+        if( evt != null ){
+          evt.currentTarget.className += " active";
+        } 
     }
 
 function closeTab(evt, tabName) {
     document.getElementById(tabName).style.display = "none";
 }
+
+showTab(event, 'about');

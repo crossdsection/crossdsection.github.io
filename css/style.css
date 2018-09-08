@@ -2,13 +2,15 @@ html, body{
   height: 100%;
 }
 
-body { 
-    background-image: url("../img/background.jpg") ;
+body {
+    /*background-image: url("../img/background.jpg") ;*/
     background-position: center center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
     background-size:  cover;
-    background-color: #999;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 /* Style the list */
@@ -17,8 +19,8 @@ ul.tab {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: rgba(0,36,10,0.6);
+    /*border: 1px solid #ccc;*/
+    background-color: rgba(0,0,0,0.6);
 }
 
 /* Float the list items side by side */
@@ -36,10 +38,14 @@ ul.tab li a {
 }
 
 /* Change background color of links on hover */
-ul.tab li a:hover {background-color: rgba(20,210,210,0.8);}
+ul.tab li a:hover {
+  background-color: rgba(20,210,210,0.8);
+}
 
 /* Create an active/current tablink class */
-ul.tab li a:focus, .active {background-color: rgba(19,136,153,0.6);}
+ul.tab li a:focus, .active {
+  background-color: rgba(19,136,153,0.6);
+}
 
 .tabContent {
     font-family: Verdana;
@@ -157,7 +163,7 @@ table {border: none;}
     background-color: #f44336;
     color: white;
     padding: 14px 25px;
-    text-align: center; 
+    text-align: center;
     text-decoration: none;
     display: inline-block;
 }
