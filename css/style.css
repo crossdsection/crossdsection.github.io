@@ -86,6 +86,7 @@ ul.tab li a:focus, .active {
   text-decoration: none;
   transition: 0.3s;
   font-size: 17px;
+  font-weight: bolder;
   color: #f7f6f6;
 }
 
@@ -97,7 +98,7 @@ ul.tab li a:focus, .active {
     z-index: 2; /* Stay on top */
     top: 75px;
     right: 0;
-    background-color: rgba(0,0,0,0.3);; /* Black*/
+    background-color: rgba(0,0,0,0.5);; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     /*padding-top: 60px; /* Place content 60px from the top */*/
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -313,10 +314,10 @@ strong {
 .item-a {
   grid-column-start: 1;
   grid-column-end: 2;
-  margin: auto;
+  margin: 15px 15px 15px 15px;
 }
 .item-b {
   grid-column-start: 2;
   grid-column-end: 3;
-  margin: auto;
+  margin: 15px 15px 15px 15px;
 }
