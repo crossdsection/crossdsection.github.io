@@ -44,7 +44,7 @@ document.getElementById( 'aboutTab' ).click();
 
 /* Typd JS Init */
 var options = {
-  strings: ["My name is <strong>Piyush Kumar</strong> a.k.a crossdsection. ^1000 <br><br> <p class='railWayFont'> I Push Code <br><br> ^1000  <a href='javascript:void(0)' onclick=\"showTab(event, 'contact')\">Contact Me!!!</a> </p>."],
+  strings: ["My name is <strong>Piyush Kumar</strong> a.k.a crossdsection. ^1000 <br><br> <p class='railWayFont'> I Push Code <br><br> ^1000  <a href='javascript:void(0)' onclick=\"showTab(event, 'contact')\">Contact Me!!!</a> </p>"],
   typeSpeed: 40
 };
 var typed = new Typed(".element", options);
