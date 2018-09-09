@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
       <TITLE>Piyush Kumar</TITLE>
       <meta charset="UTF-8">
@@ -7,13 +7,15 @@
       <meta name="description" content="Piyush Kumar About Me">
       <meta name="author" content="Piyush Kumar">
       <link rel="stylesheet" type="text/css" href="css/style.css">
-      <link href="https://fonts.googleapis.com/css?family=Cinzel|Montserrat" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/all.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel%7CMontserrat" rel="stylesheet">
       <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
       <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <script src="js/all.min.js"></script>
    </head>
    <body>
         <div id="tabDiv">
-            <ul class="tab">
+            <ul id="topNav" class="tab">
                 <li>
                     <a id="resumeTab" href="https://docs.google.com/document/d/1s2eH4r61rRSpwq2LzY0beRu0RzP5vsoo0WdWTJKKbs8/edit?usp=sharing" class="tablinks" target="_blank">
                         <p class="tabContent">CV</p>
@@ -32,6 +34,21 @@
                     <a id="aboutTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'about')"><p class="tabContent">About Me</p></a>
                 </li>
             </ul>
+            <ul id="sideNavPush" class="tab">
+              <li id="openSideNav">
+                <a href="javascript:void(0)" class="tablinks" onclick="openNav()"><i class="fas fa-bars sideNavContent"></i></a>
+              </li>
+              <li id="closeSideNav">
+                <a href="javascript:void(0)" class="tablinks" onclick="closeNav()"><i class="fas fa-times sideNavContent"></i></a>
+              </li>
+            </ul>
+        </div>
+        <div id="sideNavigation" class="sidenav">
+          <a id="aboutTab" class="tablinks" href="javascript:void(0)" onclick="showTab(event, 'about')"><p class="sideNavContent">About Me</p></a>
+          <a id="educationTab" class="tablinks"  href="javascript:void(0)" onclick="showTab(event, 'education')"><p class="sideNavContent">Education</p></a>
+          <a id="workTab" class="tablinks" href="javascript:void(0)" onclick="showTab(event, 'work')"><p class="sideNavContent">Work</p></a>
+          <a id="contactTab" class="tablinks" href="javascript:void(0)" onclick="showTab(event, 'contact')"><p class="sideNavContent">Contact</p></a>
+          <a id="resumeTab" class="tablinks" href="https://docs.google.com/document/d/1s2eH4r61rRSpwq2LzY0beRu0RzP5vsoo0WdWTJKKbs8/edit?usp=sharing" class="tablinks" target="_blank"><p class="sideNavContent">CV</p></a>
         </div>
         <!-- particles.js container -->
         <div id="particles-js"></div>
@@ -40,7 +57,7 @@
             <div class="box">
               <p class="title">Education</p>
               <div class="content">
-                <table cellspacing="20" cellpadding="0" class="diffFontClass">
+                <table  class="diffFontClass">
                   <tr>
                     <td><strong>Education</strong></td>
                     <td><strong>The ICFAI University, Dehradun</strong></td>
@@ -94,7 +111,7 @@
               <p class="title">Work - <a href="https://docs.google.com/document/d/1s2eH4r61rRSpwq2LzY0beRu0RzP5vsoo0WdWTJKKbs8/edit?usp=sharing" class="first after" target="_blank">CV </a> </p>
               <div class="content">
                 <div>
-                  <table cellspacing="20" cellpadding="0" class="diffFontClass">
+                  <table  class="diffFontClass">
                     <tr>
                       <td><strong>Project</strong></td>
                       <td><strong>Color Detection Desktop App using OpenCV</strong></td>
@@ -121,7 +138,7 @@
                     </tr>
                   </table>
                   <hr>
-                  <table cellspacing="20" cellpadding="0" class="diffFontClass">
+                  <table  class="diffFontClass">
                     <tr>
                       <td><strong>Experience</strong></td>
                       <td><strong>Mobisy Technologies Pvt. Ltd.</strong> ( May 2015 - May 2017 ) - Software Engineer</td>
@@ -139,7 +156,7 @@
             <div class="box">
               <p class="title">About Me</p>
               <div class="content">
-                <img src="img/profile.jpg" alt="Profile Image" style="hieght:200px;width:140px;">
+                <img src="img/profile.jpg" alt="Profile Image" style="height:200px;width:140px;">
                 <span class="element diffFontClass"></span>
               </div>
             </div>
@@ -148,7 +165,9 @@
             <div class="box">
               <p class="title">Contact</p>
               <div id="centeredmenu" class="content">
-                <p class="diffFontClass" style="text-align:center"> <strong>When Life gives you questions, Google has Answers!! <strong> </p>
+                <p class="diffFontClass" style="text-align:center">
+                  <strong>When Life gives you questions, Google has Answers!! </strong>
+                </p>
                 <br><br>
                 <ul>
                   <li>
@@ -172,6 +191,6 @@
             </div>
           </div>
         </div>
+        <script src="js/scripts.js"></script>
    </body>
-   <script src="js/scripts.js"></script>
 </html>

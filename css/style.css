@@ -71,6 +71,68 @@ ul.tab li a:focus, .active {
   background-color: rgba(19,136,153,0.6);
 }
 
+#sideNavPush {
+  display: none;
+}
+
+#sideNavigation{
+  z-index:2;
+}
+
+.sideNavContent {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #f7f6f6;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Stay on top */
+    top: 75px;
+    right: 0;
+    background-color: rgba(0,0,0,0.3);; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    /*padding-top: 60px; /* Place content 60px from the top */*/
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+#closeSideNav {
+  display: none;
+}
+
+@media all and (max-width: 480px) {
+  #topNav {
+    display: none;
+  }
+  #sideNavPush {
+    display: block;
+  }
+}
+
 .tabContent {
     font-size: 14px;
     color: white;
@@ -177,7 +239,20 @@ ul.tab li a:focus, .active {
     width: 75px;
 }
 
-table {border: none;}
+th, td { padding: 0px; }
+
+/* cellspacing */
+table { border-collapse: separate; border-spacing: 20px; } /* cellspacing="5" */
+/*table { border-collapse: collapse; border-spacing: 0; }   /* cellspacing="0" */*/
+
+/* valign */
+th, td { vertical-align: top; }
+
+/* align (center) */
+table {
+  margin: 0 auto;
+  border: none;
+}
 
 a,a:visited,a:hover,a:active{
   -webkit-backface-visibility:hidden;
