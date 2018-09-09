@@ -297,3 +297,8 @@ a.first:after{
 strong {
   font-size: 20px;
 }
+
+.railWayFont {
+  font-family: 'Raleway', sans-seriff;
+  color:white;
+}
