@@ -110,14 +110,14 @@ particlesJS("particles-js", {
 
 function openNav() {
     document.getElementById("sideNavigation").style.width = "40%";
-    document.getElementById("scrollableDiv").style.marginRight = "40%";
+    // document.getElementById("scrollableDiv").style.marginRight = "40%";
     document.getElementById("openSideNav").style.display = "none";
     document.getElementById("closeSideNav").style.display = "block";
 }
 
 function closeNav() {
     document.getElementById("sideNavigation").style.width = "0";
-    document.getElementById("scrollableDiv").style.marginRight = "0";
+    // document.getElementById("scrollableDiv").style.marginRight = "0";
     document.getElementById("openSideNav").style.display = "block";
     document.getElementById("closeSideNav").style.display = "none";
 }
