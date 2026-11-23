@@ -1,0 +1,327 @@
+/* ============================================
+   Navigation Component
+   ============================================ */
+
+/* Navigation Container */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(13, 13, 13, 0.95);
+  /* Vendor prefixes for backdrop-filter */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: var(--z-fixed);
+  border-bottom: 1px solid var(--color-bg-tertiary);
+  /* Vendor prefixes for transition */
+  -webkit-transition: -webkit-transform var(--transition-fast);
+  transition: transform var(--transition-fast);
+}
+
+.nav__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--container-padding-mobile);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation List */
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-md);
+}
+
+/* Navigation Links */
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  transition: color var(--transition-fast), 
+              background-color var(--transition-fast);
+  border-radius: 4px;
+  position: relative;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: var(--color-accent-primary);
+  background-color: rgba(0, 255, 153, 0.1);
+  outline: none;
+}
+
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Active link state */
+.nav__link--active {
+  color: var(--color-accent-primary);
+  background-color: rgba(0, 255, 153, 0.15);
+}
+
+.nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  /* Vendor prefixes for transform */
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: var(--color-accent-primary);
+}
+
+/* Hamburger Toggle Button - Hidden on Desktop */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: calc(var(--z-fixed) + 1);
+  position: relative;
+}
+
+.nav__toggle:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Hamburger Icon */
+.nav__hamburger {
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.nav__hamburger::before,
+.nav__hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  /* Vendor prefixes for transition */
+  -webkit-transition: -webkit-transform var(--transition-normal), 
+              top var(--transition-normal),
+              bottom var(--transition-normal);
+  transition: transform var(--transition-normal), 
+              top var(--transition-normal),
+              bottom var(--transition-normal);
+}
+
+.nav__hamburger::before {
+  top: -8px;
+}
+
+.nav__hamburger::after {
+  bottom: -8px;
+}
+
+/* Hamburger Animation - Open State */
+.nav__toggle[aria-expanded="true"] .nav__hamburger {
+  background-color: transparent;
+}
+
+.nav__toggle[aria-expanded="true"] .nav__hamburger::before {
+  top: 0;
+  /* Vendor prefixes for transform */
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav__toggle[aria-expanded="true"] .nav__hamburger::after {
+  bottom: 0;
+  /* Vendor prefixes for transform */
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* ============================================
+   Mobile Navigation (<768px)
+   ============================================ */
+@media (max-width: 767px) {
+  /* Show hamburger button */
+  .nav__toggle {
+    display: flex;
+  }
+
+  /* Hide navigation list by default */
+  .nav__list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(13, 13, 13, 0.98);
+    /* Vendor prefixes for backdrop-filter */
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-2xl);
+    
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    /* Vendor prefixes for transform */
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+    /* Vendor prefixes for transition */
+    -webkit-transition: opacity var(--transition-normal),
+                visibility var(--transition-normal),
+                -webkit-transform var(--transition-normal);
+    transition: opacity var(--transition-normal),
+                visibility var(--transition-normal),
+                transform var(--transition-normal);
+    will-change: opacity, transform;
+  }
+
+  /* Show navigation when toggle is active */
+  .nav__toggle[aria-expanded="true"] ~ .nav__list {
+    opacity: 1;
+    visibility: visible;
+    /* Vendor prefixes for transform */
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* Mobile navigation links */
+  .nav__link {
+    font-size: var(--font-size-h3);
+    padding: var(--spacing-md) var(--spacing-lg);
+    min-width: 200px;
+    text-align: center;
+    min-height: var(--touch-target-min);
+  }
+
+  /* Ensure proper stacking */
+  .nav__container {
+    position: relative;
+    z-index: calc(var(--z-fixed) + 2);
+  }
+}
+
+/* ============================================
+   Tablet and Desktop Navigation (≥768px)
+   ============================================ */
+@media (min-width: 768px) {
+  .nav__container {
+    padding: var(--spacing-md) var(--container-padding-tablet);
+  }
+
+  .nav__list {
+    gap: var(--spacing-lg);
+  }
+
+  .nav__link {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav__container {
+    padding: var(--spacing-md) var(--container-padding-desktop);
+  }
+
+  .nav__list {
+    gap: var(--spacing-xl);
+  }
+}
+
+/* ============================================
+   Button Component (for CTA buttons)
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: 2px solid transparent;
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+}
+
+.btn--primary {
+  background-color: transparent;
+  color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+  box-shadow: var(--shadow-glow-primary);
+  /* Vendor prefixes for transform */
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.btn--primary:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 4px;
+}
+
+.btn--primary:active {
+  /* Vendor prefixes for transform */
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* ============================================
+   Accessibility - Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .nav__list,
+  .nav__link,
+  .nav__hamburger,
+  .nav__hamburger::before,
+  .nav__hamburger::after,
+  .btn {
+    transition-duration: 0.01ms !important;
+  }
+}

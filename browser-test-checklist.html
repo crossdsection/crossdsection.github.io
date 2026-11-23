@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Testing Checklist - Portfolio Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #0d0d0d;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .browser-info {
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 4px solid #4caf50;
+    }
+
+    .browser-info strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: #00bfff;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #00bfff;
+      padding-bottom: 5px;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 15px 0;
+    }
+
+    .checklist li {
+      padding: 10px;
+      margin: 5px 0;
+      background: #f9f9f9;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .checklist li:hover {
+      background: #e3f2fd;
+    }
+
+    .checklist input[type="checkbox"] {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .checklist label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .section {
+      margin: 20px 0;
+      padding: 20px;
+      background: #fafafa;
+      border-radius: 5px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .section h3 {
+      color: #00ff99;
+      margin-bottom: 10px;
+    }
+
+    .progress {
+      margin: 20px 0;
+      padding: 15px;
+      background: #fff3e0;
+      border-radius: 5px;
+      border-left: 4px solid #ff9800;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 30px;
+      background: #e0e0e0;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00ff99, #00bfff);
+      width: 0%;
+      transition: width 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #00ff99;
+      color: #0d0d0d;
+    }
+
+    .btn-primary:hover {
+      background: #00cc7a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,255,153,0.3);
+    }
+
+    .btn-secondary {
+      background: #00bfff;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #0099cc;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,191,255,0.3);
+    }
+
+    .btn-danger {
+      background: #ff6b6b;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #ff5252;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .status-pass {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .status-fail {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    .status-warning {
+      background: #fff3e0;
+      color: #ef6c00;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .container {
+        box-shadow: none;
+      }
+      .buttons {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Browser Testing Checklist</h1>
+    <p>Portfolio Website - Cross-Browser Compatibility Testing</p>
+
+    <div class="browser-info">
+      <strong>Current Browser:</strong>
+      <span id="browser-name">Detecting...</span>
+      <br>
+      <strong>Viewport:</strong>
+      <span id="viewport-size">Detecting...</span>
+      <br>
+      <strong>Device Type:</strong>
+      <span id="device-type">Detecting...</span>
+    </div>
+
+    <div class="progress">
+      <strong>Testing Progress</strong>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill">0%</div>
+      </div>
+      <p style="margin-top: 10px;">
+        <span id="completed-count">0</span> of <span id="total-count">0</span> tests completed
+      </p>
+    </div>
+
+    <div class="buttons">
+      <button class="btn-primary" onclick="runAutomatedTest()">🤖 Run Automated Test</button>
+      <button class="btn-secondary" onclick="openWebsite()">🌐 Open Portfolio Website</button>
+      <button class="btn-secondary" onclick="exportResults()">💾 Export Results</button>
+      <button class="btn-danger" onclick="resetChecklist()">🔄 Reset Checklist</button>
+    </div>
+
+    <div class="section">
+      <h2>1. Visual Consistency</h2>
+      <ul class="checklist" data-category="visual">
+        <li><input type="checkbox" id="v1"><label for="v1">Hero section displays at 100vh with background #0d0d0d</label></li>
+        <li><input type="checkbox" id="v2"><label for="v2">Terminal typing animation works smoothly</label></li>
+        <li><input type="checkbox" id="v3"><label for="v3">Blinking cursor animation is visible</label></li>
+        <li><input type="checkbox" id="v4"><label for="v4">CTA buttons display with accent color #00ff99</label></li>
+        <li><input type="checkbox" id="v5"><label for="v5">Background particles/code-rain effect renders correctly</label></li>
+        <li><input type="checkbox" id="v6"><label for="v6">All sections have consistent styling</label></li>
+        <li><input type="checkbox" id="v7"><label for="v7">Fonts render correctly (JetBrains Mono, Inter)</label></li>
+        <li><input type="checkbox" id="v8"><label for="v8">Colors match design system (#00ff99, #00bfff, #e0e0e0)</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>2. Navigation</h2>
+      <ul class="checklist" data-category="navigation">
+        <li><input type="checkbox" id="n1"><label for="n1">Fixed navigation bar stays at top (desktop/tablet)</label></li>
+        <li><input type="checkbox" id="n2"><label for="n2">Hamburger menu displays on mobile (&lt;768px)</label></li>
+        <li><input type="checkbox" id="n3"><label for="n3">Hamburger menu expands to full-screen overlay</label></li>
+        <li><input type="checkbox" id="n4"><label for="n4">Smooth scroll to sections works (1 second duration)</label></li>
+        <li><input type="checkbox" id="n5"><label for="n5">Active section highlighting updates on scroll</label></li>
+        <li><input type="checkbox" id="n6"><label for="n6">Mobile menu closes after clicking a link</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. About Section</h2>
+      <ul class="checklist" data-category="about">
+        <li><input type="checkbox" id="a1"><label for="a1">Two-column layout on desktop (summary/education + stats)</label></li>
+        <li><input type="checkbox" id="a2"><label for="a2">Single-column layout on mobile</label></li>
+        <li><input type="checkbox" id="a3"><label for="a3">Stat counters animate from 0 to target when visible</label></li>
+        <li><input type="checkbox" id="a4"><label for="a4">Animation duration is ~2 seconds with easing</label></li>
+        <li><input type="checkbox" id="a5"><label for="a5">Education entries display correctly</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>4. Experience Timeline</h2>
+      <ul class="checklist" data-category="timeline">
+        <li><input type="checkbox" id="t1"><label for="t1">Vertical center line displays (desktop/tablet)</label></li>
+        <li><input type="checkbox" id="t2"><label for="t2">Entries alternate left/right on desktop</label></li>
+        <li><input type="checkbox" id="t3"><label for="t3">Single-column layout on mobile</label></li>
+        <li><input type="checkbox" id="t4"><label for="t4">"CURRENT" badge displays with glow on SonyLIV entry</label></li>
+        <li><input type="checkbox" id="t5"><label for="t5">Entries slide in from sides when entering viewport</label></li>
+        <li><input type="checkbox" id="t6"><label for="t6">Click toggle button expands/collapses details</label></li>
+        <li><input type="checkbox" id="t7"><label for="t7">Chevron icon rotates on expand/collapse</label></li>
+        <li><input type="checkbox" id="t8"><label for="t8">Smooth max-height transition animation</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>5. Skills Section</h2>
+      <ul class="checklist" data-category="skills">
+        <li><input type="checkbox" id="s1"><label for="s1">Skill tags display in tag cloud layout</label></li>
+        <li><input type="checkbox" id="s2"><label for="s2">Six distinct category colors are visible</label></li>
+        <li><input type="checkbox" id="s3"><label for="s3">Hover glow effect appears (#00ff99 or #00bfff)</label></li>
+        <li><input type="checkbox" id="s4"><label for="s4">Tags wrap naturally across available width</label></li>
+        <li><input type="checkbox" id="s5"><label for="s5">All skill categories are present (Backend, Frontend, etc.)</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Projects Section</h2>
+      <ul class="checklist" data-category="projects">
+        <li><input type="checkbox" id="p1"><label for="p1">Grid displays 3 columns on desktop (&gt;1024px)</label></li>
+        <li><input type="checkbox" id="p2"><label for="p2">Grid displays 2 columns on tablet (768-1024px)</label></li>
+        <li><input type="checkbox" id="p3"><label for="p3">Grid displays 1 column on mobile (&lt;768px)</label></li>
+        <li><input type="checkbox" id="p4"><label for="p4">Cards flip on hover (desktop) or tap (mobile)</label></li>
+        <li><input type="checkbox" id="p5"><label for="p5">Flip animation completes in ~0.6 seconds</label></li>
+        <li><input type="checkbox" id="p6"><label for="p6">Front face shows project name and description</label></li>
+        <li><input type="checkbox" id="p7"><label for="p7">Back face shows technology stack</label></li>
+        <li><input type="checkbox" id="p8"><label for="p8">3D perspective is maintained during flip</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>7. Achievements Section</h2>
+      <ul class="checklist" data-category="achievements">
+        <li><input type="checkbox" id="ac1"><label for="ac1">Achievements display in git commit log style</label></li>
+        <li><input type="checkbox" id="ac2"><label for="ac2">Green checkmark icons appear before each entry</label></li>
+        <li><input type="checkbox" id="ac3"><label for="ac3">Monospace font (JetBrains Mono) is applied</label></li>
+        <li><input type="checkbox" id="ac4"><label for="ac4">Fade-in animation triggers when entering viewport</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>8. Footer</h2>
+      <ul class="checklist" data-category="footer">
+        <li><input type="checkbox" id="f1"><label for="f1">Tagline "Currently building Blitz @ SonyLIV" displays</label></li>
+        <li><input type="checkbox" id="f2"><label for="f2">All links are clickable (GitHub, LinkedIn, etc.)</label></li>
+        <li><input type="checkbox" id="f3"><label for="f3">External links open in new tab</label></li>
+        <li><input type="checkbox" id="f4"><label for="f4">Responsive layout works on all viewport sizes</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>9. Accessibility</h2>
+      <ul class="checklist" data-category="accessibility">
+        <li><input type="checkbox" id="acc1"><label for="acc1">All interactive elements are keyboard accessible (Tab)</label></li>
+        <li><input type="checkbox" id="acc2"><label for="acc2">Visible focus indicators on all focusable elements</label></li>
+        <li><input type="checkbox" id="acc3"><label for="acc3">ARIA labels present on icon-only buttons</label></li>
+        <li><input type="checkbox" id="acc4"><label for="acc4">Semantic HTML structure (header, nav, main, section, footer)</label></li>
+        <li><input type="checkbox" id="acc5"><label for="acc5">Logical heading hierarchy (h1, h2, h3)</label></li>
+        <li><input type="checkbox" id="acc6"><label for="acc6">Reduced motion preference is respected</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>10. Responsive Design</h2>
+      <ul class="checklist" data-category="responsive">
+        <li><input type="checkbox" id="r1"><label for="r1">No horizontal scrolling on any viewport size</label></li>
+        <li><input type="checkbox" id="r2"><label for="r2">Mobile layout works correctly (&lt;768px)</label></li>
+        <li><input type="checkbox" id="r3"><label for="r3">Tablet layout works correctly (768-1024px)</label></li>
+        <li><input type="checkbox" id="r4"><label for="r4">Desktop layout works correctly (&gt;1024px)</label></li>
+        <li><input type="checkbox" id="r5"><label for="r5">Touch targets are at least 44x44px on mobile</label></li>
+        <li><input type="checkbox" id="r6"><label for="r6">Text is readable at all viewport sizes</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>11. Performance</h2>
+      <ul class="checklist" data-category="performance">
+        <li><input type="checkbox" id="perf1"><label for="perf1">Hero section loads within 3 seconds</label></li>
+        <li><input type="checkbox" id="perf2"><label for="perf2">Animations run smoothly (60fps)</label></li>
+        <li><input type="checkbox" id="perf3"><label for="perf3">No layout shifts during page load</label></li>
+        <li><input type="checkbox" id="perf4"><label for="perf4">Scroll performance is smooth</label></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📝 Notes</h2>
+      <textarea id="notes" style="width: 100%; min-height: 150px; padding: 10px; border: 1px solid #e0e0e0; border-radius: 5px; font-family: inherit; font-size: 14px;" placeholder="Add any notes about browser-specific issues, bugs, or observations..."></textarea>
+    </div>
+  </div>
+
+  <script>
+    // Detect browser and viewport
+    function detectBrowser() {
+      const ua = navigator.userAgent;
+      let browserName = 'Unknown';
+      
+      if (ua.indexOf('Firefox') > -1) {
+        browserName = 'Mozilla Firefox';
+      } else if (ua.indexOf('Edg') > -1) {
+        browserName = 'Microsoft Edge (Chromium)';
+      } else if (ua.indexOf('Chrome') > -1) {
+        browserName = 'Google Chrome';
+      } else if (ua.indexOf('Safari') > -1) {
+        browserName = 'Apple Safari';
+      }
+      
+      document.getElementById('browser-name').textContent = browserName;
+    }
+
+    function updateViewportInfo() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const deviceType = width < 768 ? 'Mobile' : width < 1024 ? 'Tablet' : 'Desktop';
+      
+      document.getElementById('viewport-size').textContent = `${width}x${height}px`;
+      document.getElementById('device-type').textContent = deviceType;
+    }
+
+    // Update progress
+    function updateProgress() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+      const total = checkboxes.length;
+      const completed = checked.length;
+      const percentage = Math.round((completed / total) * 100);
+      
+      document.getElementById('progress-fill').style.width = percentage + '%';
+      document.getElementById('progress-fill').textContent = percentage + '%';
+      document.getElementById('completed-count').textContent = completed;
+      document.getElementById('total-count').textContent = total;
+      
+      // Save to localStorage
+      saveProgress();
+    }
+
+    // Save progress to localStorage
+    function saveProgress() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const state = {};
+      checkboxes.forEach(cb => {
+        state[cb.id] = cb.checked;
+      });
+      localStorage.setItem('browserTestProgress', JSON.stringify(state));
+      localStorage.setItem('browserTestNotes', document.getElementById('notes').value);
+    }
+
+    // Load progress from localStorage
+    function loadProgress() {
+      const saved = localStorage.getItem('browserTestProgress');
+      if (saved) {
+        const state = JSON.parse(saved);
+        Object.keys(state).forEach(id => {
+          const checkbox = document.getElementById(id);
+          if (checkbox) {
+            checkbox.checked = state[id];
+          }
+        });
+      }
+      
+      const notes = localStorage.getItem('browserTestNotes');
+      if (notes) {
+        document.getElementById('notes').value = notes;
+      }
+      
+      updateProgress();
+    }
+
+    // Reset checklist
+    function resetChecklist() {
+      if (confirm('Are you sure you want to reset all checkboxes? This cannot be undone.')) {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => cb.checked = false);
+        document.getElementById('notes').value = '';
+        localStorage.removeItem('browserTestProgress');
+        localStorage.removeItem('browserTestNotes');
+        updateProgress();
+      }
+    }
+
+    // Export results
+    function exportResults() {
+      const browserName = document.getElementById('browser-name').textContent;
+      const viewport = document.getElementById('viewport-size').textContent;
+      const deviceType = document.getElementById('device-type').textContent;
+      const notes = document.getElementById('notes').value;
+      const date = new Date().toLocaleString();
+      
+      let report = `Browser Testing Report\n`;
+      report += `======================\n\n`;
+      report += `Date: ${date}\n`;
+      report += `Browser: ${browserName}\n`;
+      report += `Viewport: ${viewport}\n`;
+      report += `Device Type: ${deviceType}\n\n`;
+      
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        const title = section.querySelector('h2').textContent;
+        report += `${title}\n`;
+        report += `${'-'.repeat(title.length)}\n`;
+        
+        const checkboxes = section.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+          const label = section.querySelector(`label[for="${cb.id}"]`).textContent;
+          const status = cb.checked ? '✅' : '❌';
+          report += `${status} ${label}\n`;
+        });
+        report += `\n`;
+      });
+      
+      if (notes) {
+        report += `Notes:\n`;
+        report += `------\n`;
+        report += notes + '\n';
+      }
+      
+      // Download as text file
+      const blob = new Blob([report], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `browser-test-report-${Date.now()}.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Open portfolio website
+    function openWebsite() {
+      window.open('index.html', '_blank');
+    }
+
+    // Run automated test
+    function runAutomatedTest() {
+      alert('Opening console to run automated test. Check the browser console for results.');
+      console.log('Loading automated test script...');
+      
+      // Load and run the test script
+      const script = document.createElement('script');
+      script.src = 'test-browser-compatibility.js';
+      document.head.appendChild(script);
+    }
+
+    // Initialize
+    detectBrowser();
+    updateViewportInfo();
+    loadProgress();
+    
+    // Add event listeners
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', updateProgress);
+    });
+    
+    document.getElementById('notes').addEventListener('input', saveProgress);
+    
+    window.addEventListener('resize', updateViewportInfo);
+  </script>
+</body>
+</html>

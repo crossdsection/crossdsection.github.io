@@ -1,0 +1,279 @@
+/* CSS Reset and Base Styles */
+
+/* Box Sizing Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root and Body */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Links */
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent-secondary);
+}
+
+a:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Images and Media */
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+button:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+}
+
+/* ============================================
+   FALLBACKS FOR OLDER BROWSERS
+   ============================================ */
+
+/* Fallback for browsers without CSS custom properties (variables) */
+@supports not (--css: variables) {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    color: #e0e0e0;
+    background-color: #0d0d0d;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  }
+  
+  a {
+    color: #00ff99;
+  }
+  
+  a:hover,
+  a:focus {
+    color: #00bfff;
+  }
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  .nav {
+    background-color: rgba(13, 13, 13, 0.98);
+  }
+  
+  @media (max-width: 767px) {
+    .nav__list {
+      background-color: rgba(13, 13, 13, 0.99);
+    }
+  }
+}
+
+/* Fallback for browsers without CSS Grid support */
+@supports not (display: grid) {
+  .grid {
+    display: block;
+  }
+  
+  .grid > * {
+    margin-bottom: 1.5rem;
+  }
+  
+  .projects__grid {
+    display: block;
+  }
+  
+  .project-card {
+    margin-bottom: 2rem;
+  }
+  
+  .about__stats {
+    display: block;
+  }
+  
+  .stat-counter {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Fallback for browsers without 3D transforms */
+@supports not (transform-style: preserve-3d) {
+  .project-card__inner {
+    transform-style: flat;
+  }
+  
+  .project-card:hover .project-card__back,
+  .project-card:focus .project-card__back {
+    display: block;
+    position: relative;
+    transform: none;
+  }
+  
+  .project-card:hover .project-card__front,
+  .project-card:focus .project-card__front {
+    display: none;
+  }
+}
+
+/* Fallback for browsers without flexbox gap support */
+@supports not (gap: 1rem) {
+  .flex > * + *,
+  .nav__list > * + * {
+    margin-left: 1rem;
+  }
+  
+  .flex--column > * + * {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .skills__cloud > * {
+    margin: 0.5rem;
+  }
+}
+
+/* User select utilities for text selection control */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.select-all {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+/* Appearance reset for form elements */
+button,
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

@@ -1,202 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <TITLE>Piyush Kumar</TITLE>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width">
-      <meta name="description" content="Piyush Kumar About Me">
-      <meta name="author" content="Piyush Kumar">
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <link rel="stylesheet" type="text/css" href="css/all.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Cinzel%7CMontserrat%7CRaleway" rel="stylesheet">
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-      <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-      <script src="js/all.min.js"></script>
-   </head>
-   <body>
-        <div id="tabDiv">
-            <ul id="topNav" class="tab">
-                <li>
-                    <a id="resumeTab" href="https://docs.google.com/document/d/1s2eH4r61rRSpwq2LzY0beRu0RzP5vsoo0WdWTJKKbs8/edit?usp=sharing" class="tablinks" target="_blank">
-                        <p class="tabContent">CV</p>
-                    </a>
-                </li>
-                <li>
-                    <a id="contactTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'contact')"><p class="tabContent">Contact</p></a>
-                </li>
-                <li>
-                    <a id="workTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'work')"><p class="tabContent">Work</p></a>
-                </li>
-                <li>
-                    <a id="educationTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'education')"><p class="tabContent">Education</p></a>
-                </li>
-                <li>
-                    <a id="aboutTab" href="javascript:void(0)" class="tablinks" onclick="showTab(event, 'about')"><p class="tabContent">About Me</p></a>
-                </li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piyush Kumar — Creative full-stack developer</title>
+  <meta name="description" content="Piyush Kumar is a creative full-stack developer with 10+ years building backend systems, content pipelines and the interfaces on top of them. Senior Staff Engineer at SonyLIV.">
+  <meta property="og:title" content="Piyush Kumar — Creative full-stack developer">
+  <meta property="og:description" content="Backend brain, frontend heart. 10+ years of building the whole thing.">
+  <meta property="og:image" content="img/portrait-duo.jpg">
+  <meta name="theme-color" content="#1a1512">
+  <link rel="preload" href="fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__ember"></div>
+    <div class="loader__panel">
+      <pre class="loader__log" id="loaderLog"></pre>
+      <div class="loader__count"><span id="loaderNum">000</span><i>%</i></div>
+      <p class="loader__hint">[building the site you're about to see]</p>
+      <button class="loader__skip" type="button" id="loaderSkip">Skip intro</button>
+    </div>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+  <header class="bar">
+    <a class="bar__name" href="#top" data-scramble>Piyush Kumar</a>
+    <nav class="bar__nav" aria-label="Sections">
+      <a href="#work" data-scramble>Work</a>
+      <a href="#journey" data-scramble>Journey</a>
+      <a href="#toolbox" data-scramble>Toolbox</a>
+      <a href="#contact" data-scramble>Contact</a>
+    </nav>
+    <a class="bar__cv" href="resume/Piyush_Kumar_CV.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <h1 class="hero__title" aria-label="Creative full-stack developer">
+        <span class="hero__line hero__line--a" aria-hidden="true"><span class="hero__word" data-scramble>Creative</span></span>
+        <span class="hero__line hero__line--b" aria-hidden="true"><span class="hero__word hero__word--outline" data-scramble>Full-stack</span></span>
+        <span class="hero__line hero__line--c" aria-hidden="true"><span class="hero__word" data-scramble>Developer</span></span>
+      </h1>
+
+      <figure class="lens" id="lens">
+        <div class="lens__frame">
+          <img src="img/portrait-duo.jpg" alt="Piyush Kumar standing in a dark t-shirt against a warm studio backdrop" width="900" height="1250">
+          <canvas class="lens__dither" aria-hidden="true"></canvas>
+        </div>
+        <figcaption class="lens__tip">[hover me, i'm 1-bit inside]</figcaption>
+        <svg class="sticker" viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="ring" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+          <circle cx="100" cy="100" r="98" />
+          <text><textPath href="#ring">open to remote ✦ open to relocation ✦ </textPath></text>
+          <text class="sticker__mid" x="100" y="112" text-anchor="middle">hire</text>
+        </svg>
+      </figure>
+
+      <div class="hero__meta">
+        <p class="hero__aside">[backend brain, frontend heart]</p>
+        <p class="hero__intro">Ten years of building the whole thing, from database to button. Right now: Senior Staff Engineer on SonyLIV's CMS.</p>
+      </div>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" aria-label="Highlights">
+      <div class="ticker__track">
+        <p>14 engineers led <b>✦</b> 20,000+ titles ingested <b>✦</b> 150+ integrations shipped <b>✦</b> 70% faster turnaround <b>✦</b> 0 records lost <b>✦</b> 10+ years shipping <b>✦</b></p>
+        <p aria-hidden="true">14 engineers led <b>✦</b> 20,000+ titles ingested <b>✦</b> 150+ integrations shipped <b>✦</b> 70% faster turnaround <b>✦</b> 0 records lost <b>✦</b> 10+ years shipping <b>✦</b></p>
+      </div>
+    </div>
+
+    <!-- ============ STATEMENT ============ -->
+    <section class="statement" aria-label="About">
+      <p class="statement__text" id="statement">I build the whole thing: the schema nobody sees, the pipeline that moved 20,000 titles into SonyLIV, and the screen people actually touch. I like messy problems, clean APIs, and interfaces with a little mischief in them.</p>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="does" aria-labelledby="does-title">
+      <h2 id="does-title" class="sec-title">What I do</h2>
+      <ul class="does__list">
+        <li><h3>Backend &amp; APIs</h3><p>Services in Python, Go and Node that stay fast and boring under load.</p><span class="mono">Flask, Celery, Lambda, Kafka</span></li>
+        <li><h3>Data pipelines</h3><p>Getting thousands of messy records from partner A to platform B without losing one.</p><span class="mono">MongoDB, ScyllaDB, Redis, BigQuery</span></li>
+        <li><h3>Interfaces</h3><p>Web and mobile front ends that feel considered, not assembled.</p><span class="mono">React, Next.js, React Native, TypeScript</span></li>
+        <li><h3>Leading teams</h3><p>Sprints, reviews and architecture calls, with 14 engineers at a time.</p><span class="mono">Scrum, TDD, CI/CD</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="sec-head">
+        <h2 id="work-title" class="sec-title">Selected work</h2>
+        <p class="sec-note">[click a project to open it]</p>
+      </div>
+
+      <ol class="projects" id="projects">
+        <li class="project" data-viz="tiles">
+          <button class="project__head" aria-expanded="false">
+            <span class="project__name">Blitz CMS</span>
+            <span class="project__where">SonyLIV</span>
+            <span class="project__when mono">2024 – now</span>
+          </button>
+          <div class="project__body" hidden>
+            <p class="project__lede">SonyLIV's own CMS, built in-house to replace an expensive third-party tool.</p>
+            <ul>
+              <li>Led development and launch; removed a major licensing cost.</li>
+              <li>Migrated every legacy and inactive title with zero data loss.</li>
+              <li>Ran a team of 14 engineers through planning, ceremonies and review.</li>
             </ul>
-            <ul id="sideNavPush" class="tab">
-              <li id="openSideNav">
-                <a href="javascript:void(0)" class="tablinks" onclick="openNav()"><i class="fas fa-bars sideNavContent"></i></a>
-              </li>
-              <li id="closeSideNav">
-                <a href="javascript:void(0)" class="tablinks" onclick="closeNav()"><i class="fas fa-times sideNavContent"></i></a>
-              </li>
+            <p class="mono project__stack">Python, MongoDB, ScyllaDB, Redis, Celery, AWS, Go</p>
+          </div>
+        </li>
+        <li class="project" data-viz="stream">
+          <button class="project__head" aria-expanded="false">
+            <span class="project__name">Partner ingestion</span>
+            <span class="project__where">SonyLIV</span>
+            <span class="project__when mono">2024 – now</span>
+          </button>
+          <div class="project__body" hidden>
+            <p class="project__lede">One pipeline that takes partner content by API, CSV or JSON, from 5 assets to 20,000+.</p>
+            <ul>
+              <li>6,000 video shorts brought in through the CSV path.</li>
+              <li>20,000 Crunchyroll titles brought in through the JSON path.</li>
             </ul>
-        </div>
-        <div id="sideNavigation" class="sidenav">
-          <a id="aboutTab" class="tablinks" href="javascript:void(0)" onclick="showTab(event, 'about')"><p class="sideNavContent">About Me</p></a>
-          <a id="educationTab" class="tablinks"  href="javascript:void(0)" onclick="showTab(event, 'education')"><p class="sideNavContent">Education</p></a>
-          <a id="workTab" class="tablinks" href="javascript:void(0)" onclick="showTab(event, 'work')"><p class="sideNavContent">Work</p></a>
-          <a id="contactTab" class="tablinks" href="javascript:void(0)" onclick="showTab(event, 'contact')"><p class="sideNavContent">Contact</p></a>
-          <a id="resumeTab" class="tablinks" href="https://docs.google.com/document/d/1s2eH4r61rRSpwq2LzY0beRu0RzP5vsoo0WdWTJKKbs8/edit?usp=sharing" class="tablinks" target="_blank"><p class="sideNavContent">CV</p></a>
-        </div>
-        <!-- particles.js container -->
-        <div id="particles-js"></div>
-        <div id="scrollableDiv" onscroll="scrollEvent()">
-          <div class="modalbox" id="education">
-            <div class="box">
-              <p class="title">Education</p>
-              <div class="content">
-                <table  class="diffFontClass">
-                  <tr>
-                    <td><strong>The ICFAI University, Dehradun</strong></td>
-                  </tr>
-                  <tr>
-                    <td>CGPA - 7.0 </td>
-                  </tr>
-                  <tr>
-                    <td>B. Tech, Computer Science Engineering ( 2012 - 2017 )</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Air Force School, Agra</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Result - 72.2%</td>
-                  </tr>
-                  <tr>
-                    <td>AISSCE, PCM (2009 - 11)</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Subhash Public School, Giridih</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Result -  84.4</td>
-                  </tr>
-                  <tr>
-                    <td>AISSE(2007 - 09)</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
+            <p class="mono project__stack">Python, Celery, Redis, MongoDB, AWS</p>
           </div>
-          <div class="modalbox" id="work">
-            <div class="box">
-              <p class="title">Work - <a href="https://docs.google.com/document/d/1s2eH4r61rRSpwq2LzY0beRu0RzP5vsoo0WdWTJKKbs8/edit?usp=sharing" class="first after" target="_blank">CV </a> </p>
-              <div class="content">
-                <div>
-                  <p style="text-align:center"> <strong>Project</strong> </p>
-                  <hr>
-                  <table  class="diffFontClass">
-                    <tr>
-                      <td><strong>Color Detection Desktop App using OpenCV</strong></td>
-                    </tr>
-                    <tr>
-                      <td class="railWayFont">- A simple App which uses the Laptop Camera to detect Red Color in the Image Captured.</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td><strong>REST based JWT( Json Web Token ) Authentication </strong></td>
-                    </tr>
-                    <tr>
-                      <td class="railWayFont">- An authentication Backend using cakephp for stateless authorization. <a href="https://github.com/crossdsection/cakephp-userauth-jwt"> Code </a></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td><strong>Tic Tac Toe Game using Javascript</strong></td>
-                    </tr>
-                    <tr>
-                      <td class="railWayFont">- A simple Tic Tac Toe Game, which blocks the users move on the basis of its winning sets.</td>
-                    </tr>
-                  </table>
-                  <hr>
-                  <p style="text-align:center"> <strong>Experience</strong> </p>
-                  <hr>
-                  <table  class="diffFontClass">
-                    <tr>
-                      <td><strong>Mobisy Technologies Pvt. Ltd.</strong> ( May 2015 - May 2017 ) - Software Engineer</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td><strong>The Utopia Academy</strong> ( August 2017 - August 2018 ) - Founder</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td><strong>Toluna India Pvt. Ltd</strong> ( Sept 2018 - Present ) - Web Developer</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
+        </li>
+        <li class="project" data-viz="web">
+          <button class="project__head" aria-expanded="false">
+            <span class="project__name">Core Platform</span>
+            <span class="project__where">Fize</span>
+            <span class="project__when mono">2022 – 2023</span>
+          </button>
+          <div class="project__body" hidden>
+            <p class="project__lede">The engine behind a US insurance-data product: extraction, PDF parsing, transformation, webhooks and status tracking.</p>
+            <ul>
+              <li>Integrated 150+ insurance providers.</li>
+              <li>Swapped Puppeteer scraping for direct APIs in one month, cutting turnaround by 70%.</li>
+            </ul>
+            <p class="mono project__stack">Node.js, Puppeteer, AWS Lambda, DynamoDB, API Gateway</p>
           </div>
-          <div class="modalbox" id="about">
-            <div class="box">
-              <p class="title">About Me</p>
-              <div class="content">
-                <div class="container">
-                  <div class="item-a">
-                    <img src="img/profile.jpg" alt="Profile Image" style="width:80%;">
-                  </div>
-                  <div class="item-b">
-                    <span class="element diffFontClass"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </li>
+        <li class="project" data-viz="candles">
+          <button class="project__head" aria-expanded="false">
+            <span class="project__name">Talkstock, Tribepod, Sputnik</span>
+            <span class="project__where">Mutant (X)</span>
+            <span class="project__when mono">2020 – 2022</span>
+          </button>
+          <div class="project__body" hidden>
+            <p class="project__lede">Sole backend engineer across three products running at the same time.</p>
+            <ul>
+              <li><b>Talkstock</b>: social platform for stocks and crypto with real-time prices, graphing APIs and auto-generated tweets.</li>
+              <li><b>Tribepod</b>: freelancing platform built around group collaboration.</li>
+              <li><b>Sputnik</b>: assignment and mentor-review platform for the NGO Colors of Life.</li>
+            </ul>
+            <p class="mono project__stack">Node.js, Kafka, Redis, ElasticSearch, Flask, BigQuery, Next.js</p>
           </div>
-          <div class="modalbox" id="contact">
-            <div class="box">
-              <p class="title">Contact</p>
-              <div id="centeredmenu" class="content">
-                <p class="diffFontClass" style="text-align:center">
-                  <strong>When Life gives you questions, Google has Answers!! </strong>
-                </p>
-                <br><br>
-                <ul>
-                  <li>
-                    <a href="https://github.com/crossdsection" target="_blank" title="GitHub">
-                      <img src="img/github.png" alt="Github" class="iconsize">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.linkedin.com/in/crossdsection/" target="_blank" title="LinkedIn">
-                      <img src="img/linkedin.png" alt="LinkedeIn" class="iconsize">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:piyush.midaas@gmail.com?subject=Hey%20Piyush!&body=Yo%20Piyush,%20" title="Google+">
-                      <img src="img/gmail.png" alt="Gmail" class="iconsize">
-                    </a>
-                  </li>
-                </ul>
-                <br>
-              </div>
-            </div>
+        </li>
+        <li class="project" data-viz="orbit">
+          <button class="project__head" aria-expanded="false">
+            <span class="project__name">The Utopia Academy</span>
+            <span class="project__where">Founder</span>
+            <span class="project__when mono">2017 – 2018</span>
+          </button>
+          <div class="project__body" hidden>
+            <p class="project__lede">A grassroots tech-education effort: six teams running learning camps in local schools.</p>
+            <ul><li>Bronze at the NASSCOM Hackathon, Noida.</li></ul>
+          </div>
+        </li>
+      </ol>
+      <canvas class="peek" id="peek" width="320" height="220" aria-hidden="true"></canvas>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="journey" id="journey" aria-labelledby="journey-title">
+      <div class="sec-head">
+        <h2 id="journey-title" class="sec-title">Journey</h2>
+        <p class="sec-note">[newest first]</p>
+      </div>
+      <ol class="jt">
+        <li><span class="jt__when mono">2024 – now</span><span class="jt__role">Senior Staff Engineer, CMS Backend</span><span class="jt__org">Culver Max Entertainment (SonyLIV)</span></li>
+        <li><span class="jt__when mono">2022 – 2023</span><span class="jt__role">Senior Software Engineer</span><span class="jt__org">Fize Technology</span></li>
+        <li><span class="jt__when mono">2020 – 2022</span><span class="jt__role">Software Engineer II</span><span class="jt__org">Mutant (X), Bengaluru</span></li>
+        <li><span class="jt__when mono">2018 – 2020</span><span class="jt__role">Web Developer</span><span class="jt__org">Toluna India, Gurgaon</span></li>
+        <li><span class="jt__when mono">2017 – 2018</span><span class="jt__role">Founder, educator, developer</span><span class="jt__org">The Utopia Academy, Dehradun</span></li>
+        <li><span class="jt__when mono">2015 – 2017</span><span class="jt__role">Software Engineer, intern before that</span><span class="jt__org">Mobisy Technologies (Bizom), Bengaluru</span></li>
+        <li><span class="jt__when mono">2012 – 2017</span><span class="jt__role">B.Tech, Computer Science</span><span class="jt__org">ICFAI University, Dehradun</span></li>
+      </ol>
+    </section>
+
+    <!-- ============ TOOLBOX ============ -->
+    <section class="toolbox" id="toolbox" aria-labelledby="toolbox-title">
+      <div class="sec-head">
+        <h2 id="toolbox-title" class="sec-title">Toolbox</h2>
+        <p class="sec-note">[go on, drag them around]</p>
+      </div>
+      <div class="tray" id="tray">
+        <span class="chip chip--lang">Python</span><span class="chip chip--lang">Go</span><span class="chip chip--lang">TypeScript</span><span class="chip chip--lang">Node.js</span><span class="chip chip--lang">PHP</span>
+        <span class="chip chip--data">MongoDB</span><span class="chip chip--data">ScyllaDB</span><span class="chip chip--data">Redis</span><span class="chip chip--data">MySQL</span><span class="chip chip--data">DynamoDB</span><span class="chip chip--data">ElasticSearch</span><span class="chip chip--data">BigQuery</span>
+        <span class="chip chip--cloud">AWS Lambda</span><span class="chip chip--cloud">API Gateway</span><span class="chip chip--cloud">Docker</span><span class="chip chip--cloud">Celery</span><span class="chip chip--cloud">Kafka</span>
+        <span class="chip chip--ui">React</span><span class="chip chip--ui">React Native</span><span class="chip chip--ui">Next.js</span><span class="chip chip--ui">AngularJS</span><span class="chip chip--ui">Flask</span>
+        <span class="chip chip--way">TDD</span><span class="chip chip--way">Microservices</span><span class="chip chip--way">CI/CD</span>
+      </div>
+      <ul class="legend">
+        <li><i class="chip--lang"></i>Languages</li><li><i class="chip--data"></i>Data</li><li><i class="chip--cloud"></i>Cloud</li><li><i class="chip--ui"></i>Interfaces</li><li><i class="chip--way"></i>Ways of working</li>
+      </ul>
+      <p class="certs">Certified: ScyllaDB S201 Data Modeling (2026), Sales Prospecting, Chegg Skills (2026), Bioinformatics for Beginners, Coursera (2021).</p>
+    </section>
+
+    <!-- ============ OFF THE CLOCK ============ -->
+    <section class="offclock" id="off-the-clock" aria-labelledby="off-title">
+      <div class="offclock__head">
+        <h2 id="off-title" class="offclock__title">Off the clock</h2>
+        <p class="offclock__lede">I write and rap as <b>AHAM</b>, in Hindi, Urdu-tinged Hindi and English. My debut album, Ummeeed, is twelve tracks, self-funded, no label.</p>
+      </div>
+      <div class="offclock__grid">
+        <img class="offclock__art" src="img/ummeeed-art-700.jpg" alt="Ummeeed album artwork: layered black-and-white photos of AHAM performing, with the title उम्मीद" width="700" height="667" loading="lazy">
+        <div>
+          <ol class="tracks">
+            <li>Pal <i>ft. RZDP</i></li><li>Maan</li><li>JHDG030036092016</li><li>Random <i>prod. Gum$</i></li>
+            <li>Safina</li><li>Saanp Seedhi</li><li>Ghut</li><li>Gharuanda</li>
+            <li>Maang</li><li>Ummeeed <i>ft. Shashank</i></li><li>Shiv <i>ft. Shashank Singh</i></li><li>Nitya</li>
+          </ol>
+          <p class="tracks__credit">Produced by Sampliyaha, with AHAM.</p>
+          <details class="more">
+            <summary>More songs and collaborations</summary>
+            <p><b>Originals</b>: Lalkaarein, Chup, <a href="https://www.youtube.com/watch?v=W2XnVSFOc9E" target="_blank" rel="noopener">Bahaane</a>, Aankh Band, Parchhayee, Aiyaar, Kaash, Insaan. <b>Refix</b>: <a href="https://www.youtube.com/watch?v=t8qrQVpgTgM" target="_blank" rel="noopener">Duniya Makkaar</a>. <b>Collaborations</b>: <a href="https://song.link/i/1855993913" target="_blank" rel="noopener">Silsile</a>, Banjaarey, <a href="https://www.youtube.com/watch?v=vskKKaWtqXg" target="_blank" rel="noopener">Gumshuda</a>, <a href="https://www.youtube.com/watch?v=kjgDliY0RDA" target="_blank" rel="noopener">Laapata</a>, Kinaare, <a href="https://www.youtube.com/watch?v=Ka2zkKdNurI" target="_blank" rel="noopener">Bejaan</a>, <a href="https://youtu.be/bCi7G0hBUt8" target="_blank" rel="noopener">Sun Lo Na</a>, Jal Jaaye.</p>
+          </details>
+          <div class="offclock__links">
+            <a class="pill" data-link="spotify" href="#">Listen on Spotify</a>
+            <a class="pill" data-link="youtube" href="#">YouTube</a>
+            <a class="pill pill--solid" data-link="linktree" href="#">All AHAM links on Linktree</a>
           </div>
         </div>
-        <script src="js/scripts.js"></script>
-   </body>
+        <div class="listening">
+          <h3>On my headphones</h3>
+          <ul class="listening__list" aria-live="polite"><li class="listening__empty">I log everything I listen to on Last.fm.</li></ul>
+          <a class="listening__link" href="https://www.last.fm/user/crossdsection" target="_blank" rel="noopener">See my Last.fm</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="contact__title">Got something<br><span>odd to build?</span></h2>
+      <div class="contact__row">
+        <a class="contact__mail" href="mailto:piyush.midaas@gmail.com" data-cursor="write">piyush.midaas@gmail.com</a>
+        <button class="contact__copy" type="button" data-copy="piyush.midaas@gmail.com" data-cursor="copy">Copy email</button>
+      </div>
+      <ul class="contact__links">
+        <li><a href="https://www.linkedin.com/in/crossdsection/" target="_blank" rel="noopener" data-scramble>LinkedIn</a></li>
+        <li><a href="https://github.com/crossdsection" target="_blank" rel="noopener" data-scramble>GitHub</a></li>
+        <li><a href="resume/Piyush_Kumar_CV.pdf" target="_blank" rel="noopener" data-scramble>Résumé</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__row">
+      <span>© <span id="year">2026</span> Piyush Kumar</span>
+      <span>Hand-built, no framework, some nonsense</span>
+      <a href="#top">Back to top</a>
+    </div>
+    <p class="foot__mark" id="mark" aria-label="crossdsection">crossdsection</p>
+  </footer>
+
+  <script src="js/site.js" defer></script>
+</body>
 </html>

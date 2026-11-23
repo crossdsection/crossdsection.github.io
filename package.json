@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Piyush Kumar's Portfolio Website",
+  "scripts": {
+    "build:css": "npm run minify:css",
+    "build:js": "npm run minify:js",
+    "build": "npm run build:css && npm run build:js",
+    "minify:css": "node build/minify-css.js",
+    "minify:js": "node build/minify-js.js"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "terser": "^5.19.2"
+  },
+  "keywords": [
+    "portfolio",
+    "website"
+  ],
+  "author": "Piyush Kumar",
+  "license": "MIT"
+}

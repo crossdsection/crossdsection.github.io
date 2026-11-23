@@ -1,0 +1,99 @@
+/* Design System Variables */
+:root {
+  /* Colors - Dark Theme */
+  --color-bg-primary: #0d0d0d;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #262626;
+  
+  --color-accent-primary: #00ff99;
+  --color-accent-secondary: #00bfff;
+  
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+  
+  --color-border: #333333;
+  
+  /* Skill Category Colors */
+  --skill-backend: #ff6b6b;
+  --skill-frontend: #4ecdc4;
+  --skill-database: #ffe66d;
+  --skill-cloud: #a8dadc;
+  --skill-mobile: #f1a7fe;
+  --skill-tools: #95e1d3;
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  
+  /* Font Sizes - Mobile First */
+  --font-size-base: 16px;
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.25rem;
+  --font-size-small: 0.875rem;
+  --font-size-tiny: 0.75rem;
+  
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Breakpoints */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+  
+  /* Layout */
+  --container-max-width: 1200px;
+  --container-padding-mobile: 1rem;
+  --container-padding-tablet: 2rem;
+  --container-padding-desktop: 3rem;
+  
+  /* Touch Targets */
+  --touch-target-min: 44px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.4s ease;
+  --transition-slow: 0.6s ease;
+  --transition-smooth-scroll: 1s ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-glow-primary: 0 0 20px var(--color-accent-primary);
+  --shadow-glow-secondary: 0 0 20px var(--color-accent-secondary);
+  
+  /* Z-index Scale */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 18px;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
+  }
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+  :root {
+    --font-size-base: 18px;
+    --font-size-h1: 3rem;
+    --font-size-h2: 2.25rem;
+    --font-size-h3: 1.75rem;
+  }
+}

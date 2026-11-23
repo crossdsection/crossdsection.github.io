@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Piyush Kumar - Senior Developer, Backend Engineer, CMS Architect, System Builder. Portfolio showcasing 9+ years of experience in building scalable systems.">
+  <meta name="author" content="Piyush Kumar">
+  <title>Piyush Kumar - Senior Developer & Backend Engineer</title>
+  
+  <!-- Font Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Minified Stylesheet -->
+  <link rel="stylesheet" href="dist/styles.min.css">
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__container">
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__hamburger"></span>
+        </button>
+        <ul class="nav__list">
+          <li><a href="#hero" class="nav__link">Home</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#achievements" class="nav__link">Achievements</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero__background" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">
+          <span class="hero__name" data-text="Piyush Kumar"></span>
+          <span class="hero__cursor" aria-hidden="true">|</span>
+        </h1>
+        <p class="hero__subtitle" data-subtitles='["Senior Developer", "Backend Engineer", "CMS Architect", "System Builder"]'></p>
+        <div class="hero__cta">
+          <a href="https://github.com/crossdsection" class="btn btn--primary" target="_blank" rel="noopener" aria-label="Visit GitHub profile">GitHub</a>
+          <a href="https://linkedin.com/in/piyush-kumar" class="btn btn--primary" target="_blank" rel="noopener" aria-label="Visit LinkedIn profile">LinkedIn</a>
+          <a href="https://stackoverflow.com/users/piyush" class="btn btn--primary" target="_blank" rel="noopener" aria-label="Visit StackOverflow profile">StackOverflow</a>
+        </div>
+        <div class="hero__contact">
+          <a href="tel:+1234567890" class="hero__contact-link" aria-label="Call phone number">+1 234 567 890</a>
+          <a href="mailto:piyush@example.com" class="hero__contact-link" aria-label="Send email">piyush@example.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about__container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about__content">
+          <div class="about__summary">
+            <p>I'm a Senior Developer with 9+ years of experience building scalable backend systems and CMS platforms. My journey began as a full-stack developer, evolved through backend engineering roles, and now I lead CMS backend development at SonyLIV, where I architect and build systems that power content delivery for millions of users.</p>
+            <p>I specialize in Python, Node.js, and Golang, with extensive experience in cloud infrastructure, microservices architecture, and database optimization. I'm passionate about building robust, performant systems that solve real-world problems.</p>
+          </div>
+          <div class="about__education">
+            <h3>Education</h3>
+            <ul class="education-list">
+              <li class="education-item">
+                <span class="education__degree">B.Tech in Computer Science & Engineering</span>
+                <span class="education__institution">The ICFAI University Dehradun</span>
+                <span class="education__year">2012-2017</span>
+                <span class="education__grade">CGPA: 7.00</span>
+              </li>
+              <li class="education-item">
+                <span class="education__degree">PCM (Physics, Chemistry, Mathematics)</span>
+                <span class="education__institution">Air Force School Agra</span>
+                <span class="education__year">2011</span>
+                <span class="education__grade">73%</span>
+              </li>
+              <li class="education-item">
+                <span class="education__degree">AISSE (All India Secondary School Examination)</span>
+                <span class="education__institution">Subhash Public School Giridih</span>
+                <span class="education__year">2009</span>
+                <span class="education__grade">84%</span>
+              </li>
+            </ul>
+          </div>
+          <div class="about__stats">
+            <div class="stat-counter" data-target="9" data-label="Years Experience">
+              <span class="stat-counter__value">0</span>
+              <span class="stat-counter__label">+ Years Experience</span>
+            </div>
+            <div class="stat-counter" data-target="6" data-label="Companies">
+              <span class="stat-counter__value">0</span>
+              <span class="stat-counter__label">Companies</span>
+            </div>
+            <div class="stat-counter" data-target="15" data-label="Technologies">
+              <span class="stat-counter__value">0</span>
+              <span class="stat-counter__label">+ Technologies</span>
+            </div>
+            <div class="stat-counter" data-target="10" data-label="Products Built">
+              <span class="stat-counter__value">0</span>
+              <span class="stat-counter__label">+ Products Built</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="experience">
+      <div class="experience__container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline__line" aria-hidden="true"></div>
+          
+          <article class="timeline__entry timeline__entry--right" data-expanded="false">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__company">Culver Max Entertainment (SonyLIV)</h3>
+                <span class="timeline__badge timeline__badge--current">CURRENT</span>
+                <span class="timeline__date">Jan 2024 - Present</span>
+                <h4 class="timeline__title">Senior Developer CMS Backend</h4>
+                <button class="timeline__toggle" aria-label="Expand details" aria-expanded="false">
+                  <span class="timeline__chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="timeline__details">
+                <p>Leading the development of Blitz, a next-generation CMS platform that replaced the legacy system. Architecting scalable backend services using Python, Flask, and AWS infrastructure to handle content management for millions of users across the SonyLIV platform.</p>
+                <ul>
+                  <li>Designed and implemented microservices architecture for content delivery</li>
+                  <li>Optimized database queries reducing response times by 60%</li>
+                  <li>Built automated deployment pipelines using AWS CodeBuild</li>
+                  <li>Mentored junior developers and conducted code reviews</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__entry timeline__entry--left" data-expanded="false">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__company">Fize Technology INC</h3>
+                <span class="timeline__date">Jun 2022 - Nov 2023</span>
+                <h4 class="timeline__title">Senior Software Engineer</h4>
+                <button class="timeline__toggle" aria-label="Expand details" aria-expanded="false">
+                  <span class="timeline__chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="timeline__details">
+                <p>Developed high-performance backend services for fintech applications using Node.js and Golang. Implemented real-time data processing pipelines and integrated third-party payment gateways.</p>
+                <ul>
+                  <li>Built RESTful APIs serving 100K+ daily requests</li>
+                  <li>Implemented Redis caching layer improving performance by 40%</li>
+                  <li>Designed database schemas for PostgreSQL and MongoDB</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__entry timeline__entry--right" data-expanded="false">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__company">Mutant (X)</h3>
+                <span class="timeline__date">Oct 2020 - May 2022</span>
+                <h4 class="timeline__title">Software Engineer II</h4>
+                <button class="timeline__toggle" aria-label="Expand details" aria-expanded="false">
+                  <span class="timeline__chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="timeline__details">
+                <p>Contributed to building scalable web applications and backend services. Worked with modern tech stack including TypeScript, Next.js, and AWS services.</p>
+                <ul>
+                  <li>Developed serverless functions using AWS Lambda</li>
+                  <li>Implemented CI/CD pipelines with Docker and Kubernetes</li>
+                  <li>Collaborated with cross-functional teams in agile environment</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__entry timeline__entry--left" data-expanded="false">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__company">Toluna India</h3>
+                <span class="timeline__date">Sep 2018 - Dec 2020</span>
+                <h4 class="timeline__title">Web Developer</h4>
+                <button class="timeline__toggle" aria-label="Expand details" aria-expanded="false">
+                  <span class="timeline__chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="timeline__details">
+                <p>Developed and maintained web applications for market research platform. Worked on both frontend and backend components using modern JavaScript frameworks.</p>
+                <ul>
+                  <li>Built responsive web interfaces using AngularJS</li>
+                  <li>Developed RESTful APIs with Node.js and Express</li>
+                  <li>Implemented automated testing with Jest</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__entry timeline__entry--right timeline__entry--entrepreneurial" data-expanded="false">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__company">The Utopia Academy</h3>
+                <span class="timeline__date">Aug 2017 - Aug 2018</span>
+                <h4 class="timeline__title">Founder / Educator / Developer</h4>
+                <button class="timeline__toggle" aria-label="Expand details" aria-expanded="false">
+                  <span class="timeline__chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="timeline__details">
+                <p>Founded an educational technology startup focused on providing quality programming education. Built the entire platform from scratch and taught coding to students.</p>
+                <ul>
+                  <li>Developed learning management system using PHP and MySQL</li>
+                  <li>Created curriculum for web development courses</li>
+                  <li>Managed all aspects of the business including marketing and operations</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__entry timeline__entry--left" data-expanded="false">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__company">Mobisy Technologies</h3>
+                <span class="timeline__date">May 2015 - May 2017</span>
+                <h4 class="timeline__title">Software Engineer</h4>
+                <button class="timeline__toggle" aria-label="Expand details" aria-expanded="false">
+                  <span class="timeline__chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="timeline__details">
+                <p>Started my professional journey as a software engineer working on mobile and web applications. Gained foundational experience in full-stack development.</p>
+                <ul>
+                  <li>Developed hybrid mobile apps using Cordova and Ionic</li>
+                  <li>Built backend services with CakePHP</li>
+                  <li>Worked with MySQL databases and REST APIs</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="skills__container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills__cloud">
+          <span class="skill-tag skill-tag--backend" data-category="Backend">Python</span>
+          <span class="skill-tag skill-tag--backend" data-category="Backend">NodeJS</span>
+          <span class="skill-tag skill-tag--backend" data-category="Backend">Golang</span>
+          <span class="skill-tag skill-tag--backend" data-category="Backend">CakePHP</span>
+          <span class="skill-tag skill-tag--backend" data-category="Backend">Flask</span>
+          
+          <span class="skill-tag skill-tag--frontend" data-category="Frontend">HTML5</span>
+          <span class="skill-tag skill-tag--frontend" data-category="Frontend">CSS3</span>
+          <span class="skill-tag skill-tag--frontend" data-category="Frontend">JavaScript</span>
+          <span class="skill-tag skill-tag--frontend" data-category="Frontend">TypeScript</span>
+          <span class="skill-tag skill-tag--frontend" data-category="Frontend">AngularJS</span>
+          <span class="skill-tag skill-tag--frontend" data-category="Frontend">NextJS</span>
+          
+          <span class="skill-tag skill-tag--database" data-category="Databases">MongoDB</span>
+          <span class="skill-tag skill-tag--database" data-category="Databases">MySQL</span>
+          <span class="skill-tag skill-tag--database" data-category="Databases">DynamoDB</span>
+          <span class="skill-tag skill-tag--database" data-category="Databases">ScyllaDB</span>
+          <span class="skill-tag skill-tag--database" data-category="Databases">Redis</span>
+          <span class="skill-tag skill-tag--database" data-category="Databases">BigQuery</span>
+          <span class="skill-tag skill-tag--database" data-category="Databases">ElasticSearch</span>
+          
+          <span class="skill-tag skill-tag--cloud" data-category="Cloud & DevOps">AWS Lambda</span>
+          <span class="skill-tag skill-tag--cloud" data-category="Cloud & DevOps">API Gateway</span>
+          <span class="skill-tag skill-tag--cloud" data-category="Cloud & DevOps">CloudWatch</span>
+          <span class="skill-tag skill-tag--cloud" data-category="Cloud & DevOps">CodeBuild</span>
+          <span class="skill-tag skill-tag--cloud" data-category="Cloud & DevOps">Docker</span>
+          <span class="skill-tag skill-tag--cloud" data-category="Cloud & DevOps">Celery</span>
+          <span class="skill-tag skill-tag--cloud" data-category="Cloud & DevOps">Kafka</span>
+          
+          <span class="skill-tag skill-tag--mobile" data-category="Mobile">Cordova</span>
+          <span class="skill-tag skill-tag--mobile" data-category="Mobile">Ionic</span>
+          <span class="skill-tag skill-tag--mobile" data-category="Mobile">Windows Mobile</span>
+          
+          <span class="skill-tag skill-tag--tools" data-category="Tools">Puppeteer</span>
+          <span class="skill-tag skill-tag--tools" data-category="Tools">Jest</span>
+          <span class="skill-tag skill-tag--tools" data-category="Tools">Google App Script</span>
+          <span class="skill-tag skill-tag--tools" data-category="Tools">qz.io</span>
+          <span class="skill-tag skill-tag--tools" data-category="Tools">Git</span>
+          <span class="skill-tag skill-tag--tools" data-category="Tools">SCRUM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="projects__container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects__grid">
+          <div class="project-card">
+            <div class="project-card__inner">
+              <div class="project-card__front">
+                <h3 class="project-card__title">Blitz</h3>
+                <p class="project-card__description">Next-generation CMS platform for SonyLIV content management, replacing legacy systems with modern microservices architecture.</p>
+              </div>
+              <div class="project-card__back">
+                <h4>Tech Stack</h4>
+                <ul class="project-card__tech">
+                  <li>Python</li>
+                  <li>Flask</li>
+                  <li>MongoDB</li>
+                  <li>AWS Lambda</li>
+                  <li>DynamoDB</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card__inner">
+              <div class="project-card__front">
+                <h3 class="project-card__title">Core Platform</h3>
+                <p class="project-card__description">Microservices architecture for content delivery, handling millions of requests with high availability and performance.</p>
+              </div>
+              <div class="project-card__back">
+                <h4>Tech Stack</h4>
+                <ul class="project-card__tech">
+                  <li>NodeJS</li>
+                  <li>Kafka</li>
+                  <li>Redis</li>
+                  <li>Docker</li>
+                  <li>Kubernetes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card__inner">
+              <div class="project-card__front">
+                <h3 class="project-card__title">Talkstock</h3>
+                <p class="project-card__description">Real-time communication platform for financial discussions with live data feeds and analytics.</p>
+              </div>
+              <div class="project-card__back">
+                <h4>Tech Stack</h4>
+                <ul class="project-card__tech">
+                  <li>TypeScript</li>
+                  <li>NextJS</li>
+                  <li>WebSockets</li>
+                  <li>PostgreSQL</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card__inner">
+              <div class="project-card__front">
+                <h3 class="project-card__title">Tribepod</h3>
+                <p class="project-card__description">Social networking platform with advanced features for community building and content sharing.</p>
+              </div>
+              <div class="project-card__back">
+                <h4>Tech Stack</h4>
+                <ul class="project-card__tech">
+                  <li>Golang</li>
+                  <li>GraphQL</li>
+                  <li>MongoDB</li>
+                  <li>AWS S3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card__inner">
+              <div class="project-card__front">
+                <h3 class="project-card__title">Sputnik</h3>
+                <p class="project-card__description">Analytics and monitoring dashboard for tracking system performance and user behavior.</p>
+              </div>
+              <div class="project-card__back">
+                <h4>Tech Stack</h4>
+                <ul class="project-card__tech">
+                  <li>Python</li>
+                  <li>ElasticSearch</li>
+                  <li>BigQuery</li>
+                  <li>React</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card__inner">
+              <div class="project-card__front">
+                <h3 class="project-card__title">Bizom</h3>
+                <p class="project-card__description">Enterprise retail management system with mobile-first approach for field force automation.</p>
+              </div>
+              <div class="project-card__back">
+                <h4>Tech Stack</h4>
+                <ul class="project-card__tech">
+                  <li>CakePHP</li>
+                  <li>MySQL</li>
+                  <li>Cordova</li>
+                  <li>Ionic</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+      <div class="achievements__container">
+        <h2 class="section-title">Achievements</h2>
+        <ul class="achievements__list">
+          <li class="achievement-item">
+            <span class="achievement__icon" aria-hidden="true">✓</span>
+            <span class="achievement__text">NassCom Bronze Medal for academic excellence in Computer Science</span>
+          </li>
+          <li class="achievement-item">
+            <span class="achievement__icon" aria-hidden="true">✓</span>
+            <span class="achievement__text">Founded The Utopia Academy - Educational technology startup empowering students with programming skills</span>
+          </li>
+          <li class="achievement-item">
+            <span class="achievement__icon" aria-hidden="true">✓</span>
+            <span class="achievement__text">Built Blitz CMS replacing legacy system at SonyLIV, improving content management efficiency by 70%</span>
+          </li>
+          <li class="achievement-item">
+            <span class="achievement__icon" aria-hidden="true">✓</span>
+            <span class="achievement__text">Architected microservices handling 10M+ daily requests with 99.9% uptime</span>
+          </li>
+          <li class="achievement-item">
+            <span class="achievement__icon" aria-hidden="true">✓</span>
+            <span class="achievement__text">Mentored 15+ junior developers across multiple organizations</span>
+          </li>
+          <li class="achievement-item">
+            <span class="achievement__icon" aria-hidden="true">✓</span>
+            <span class="achievement__text">Contributed to open-source projects and technical communities</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__tagline">Currently building Blitz @ SonyLIV</p>
+      <nav class="footer__links" aria-label="Social media links">
+        <a href="https://github.com/crossdsection" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
+        <a href="https://linkedin.com/in/piyush-kumar" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
+        <a href="https://stackoverflow.com/users/piyush" target="_blank" rel="noopener" aria-label="StackOverflow profile">StackOverflow</a>
+        <a href="mailto:piyush@example.com" aria-label="Email address">Email</a>
+        <a href="tel:+1234567890" aria-label="Phone number">Phone</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Minified Scripts -->
+  <script src="dist/scripts.min.js" defer></script>
+</body>
+</html>
